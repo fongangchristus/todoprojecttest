@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Todos</title>
+    <th:block th:include="layout/header"></th:block>
+</head>
+<body>
+<div class="container-fluid">
+    <div th:if="${not #lists.isEmpty(todos)}">
+        <h2>All Todos</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr th:each="todo : ${todos}">
+                <td th:text="${todo.id}">Id</td>
+                <td th:text="${todo.name}">Name</td>
+                <td th:text="${todo.description}">Description</td>
+                <td th:text="${todo.type}">Type</td>
+                <td th:text="${todo.category}">Category</td>
+                <td><a th:href="${'/todos/edit/' + todo.id}" class="btn btn-default">Edit</a></td>
+                <td><a th:href="${'/todos/delete/' + todo.id}" class="btn btn-danger">Delete</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
