@@ -6,7 +6,7 @@
 	<groupId>com.itgstore</groupId>
 	<artifactId>todomanagement</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>todomanagement</name>
 	<description>POC TEST CI CD OCM</description>
